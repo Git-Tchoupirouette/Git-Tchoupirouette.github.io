@@ -11,13 +11,13 @@ document.getElementById('addOverlayBtn').addEventListener('click', function() {
         reader.onload = function(e) {
             img.src = e.target.result;
             img.onload = function() {
-                console.log(img.width, img.height)
                 if (img.width !== img.height) {
+                    console.log(img.width, img.height)
                     alert('Veuillez télécharger une image carrée.');
                     // Réinitialiser l'input pour que l'utilisateur puisse télécharger une nouvelle image
                     imgInput.value = '';
                 } else {
-                    
+                    console.log(img.width, img.height)
                     canvas.width = img.width;
                     canvas.height = img.height;
                     ctx.drawImage(img, 0, 0);
