@@ -14,6 +14,7 @@ document.getElementById('addOverlayBtn').addEventListener('click', function() {
             ctx.drawImage(img, 0, 0);
             // Ajouter votre élément par-dessus l'image ici
             // Par exemple : ctx.fillText('Mon texte', 50, 50);
+            ctx.fillText('Salut', 50, 50);
             document.getElementById('downloadLink').href = canvas.toDataURL("image/jpeg");
         }
         img.src = reader.result;
