@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Mon site web</title>
-    <script src="main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un élément à une image</title>
 </head>
 <body>
-    <h1>Générateur de nombres aléatoires</h1>
-    <button onclick="generateRandomNumber()">Générer un nombre aléatoire</button>
-    <p id="randomNumberDisplay"></p>
+    <input type="file" id="imgInput" accept="image/*">
+    <button id="addOverlayBtn">Ajouter un élément</button>
+    <canvas id="canvas"></canvas>
+    <a id="downloadLink" download="resultat.jpg" href="#">Télécharger le résultat</a>
+
+    <script src="main.js"></script>
 </body>
 </html>
