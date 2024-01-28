@@ -16,6 +16,7 @@ document.getElementById('addOverlayBtn').addEventListener('click', function() {
                     // Réinitialiser l'input pour que l'utilisateur puisse télécharger une nouvelle image
                     imgInput.value = '';
                 } else {
+                    console.log(img.width, img.height)
                     canvas.width = img.width;
                     canvas.height = img.height;
                     ctx.drawImage(img, 0, 0);
