@@ -9,21 +9,21 @@ document.getElementById('addOverlayBtn').addEventListener('click', function() {
         let reader = new FileReader();
 
         reader.onload = function(e) {
+            let img = new Image();
             img.src = e.target.result;
             img.onload = function() {
                 if (img.width !== img.height) {
                     alert('Veuillez télécharger une image carrée.');
                     imgInput.value = '';
                 } else {
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
-
-                    let overlay = new Image();
-                    overlay.src = 'layout_xenai.jpg';
-                    overlay.onload = function() {
-                        ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
-                        document.getElementById('downloadLink').href = canvas.toDataURL("image/png");
+                    let baseImage = new Image();
+                    baseImage.src = 'base_image.png'; // Spécifiez le nom de votre image de base
+                    baseImage.onload = function() {
+                        canvas.width = baseImage.width;
+                        canvas.height = baseImage.height;
+                        ctx.drawImage(baseImage, 0, 0);
+                        ctx.drawImage(img, 0, 0, baseImage.width, baseImage.height); // Superposer l'image de l'utilisateur à l'image de base avec les mêmes dimensions
+                        document.getElementById('downloadLink').href = canvas.toDataURL("image/png"); // Spécifiez le type d'image ici
                     };
                 }
             };
