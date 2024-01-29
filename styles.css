@@ -1,9 +1,37 @@
-#imageContainer {
-  position: relative;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-#imageContainer img {
-  position: absolute;
-  top: 0;
-  left: 0;
+#container {
+    position: relative;
+    width: 300px; /* Largeur du conteneur */
+    height: 533px; /* Hauteur du conteneur */
+    background-color: #f2f2f2; /* Couleur de fond pour mieux distinguer le conteneur */
+    padding: 20px; /* Espace intérieur du conteneur */
+}
+
+#imageContainer {
+    position: relative;
+    width: 100%; /* Prend toute la largeur du conteneur */
+    height: 80%; /* Prend 80% de la hauteur du conteneur */
+    overflow: hidden; /* Masque le dépassement de l'image */
+    margin-bottom: 20px; /* Espace en bas du conteneur d'image */
+}
+
+#imageCarree {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; /* Pour que l'image carrée ne dépasse pas de son conteneur */
+    max-height: 100%; /* Pour que l'image carrée ne dépasse pas de son conteneur */
+}
+
+#downloadButton {
+    display: block;
+    text-align: center; /* Centre le texte dans le lien de téléchargement */
 }
