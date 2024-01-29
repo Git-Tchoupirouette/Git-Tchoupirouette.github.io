@@ -9,26 +9,26 @@ body {
 #container {
     position: relative;
     width: 300px; /* Largeur du conteneur */
-    height: 533px; /* Hauteur du conteneur */
+    height: 800px; /* Hauteur du conteneur */
     background-color: #f2f2f2; /* Couleur de fond pour mieux distinguer le conteneur */
     padding: 20px; /* Espace intérieur du conteneur */
 }
 
-#imageContainer {
+#imageContainer, #imageToPasteContainer {
     position: relative;
     width: 100%; /* Prend toute la largeur du conteneur */
-    height: 80%; /* Prend 80% de la hauteur du conteneur */
+    height: 40%; /* Prend 40% de la hauteur du conteneur */
     overflow: hidden; /* Masque le dépassement de l'image */
-    margin-bottom: 20px; /* Espace en bas du conteneur d'image */
+    margin-bottom: 20px; /* Espace en bas des conteneurs d'image */
 }
 
-#imageCarree {
+#imageCarree, #imageToPaste {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 100%; /* Pour que l'image carrée ne dépasse pas de son conteneur */
-    max-height: 100%; /* Pour que l'image carrée ne dépasse pas de son conteneur */
+    max-width: 100%; /* Pour que les images ne dépassent pas de leur conteneur */
+    max-height: 100%; /* Pour que les images ne dépassent pas de leur conteneur */
 }
 
 #downloadButton {
