@@ -21,7 +21,7 @@ document.getElementById('addOverlayBtn').addEventListener('click', function() {
                     ctx.drawImage(img, 0, 0);
 
                     let overlay = new Image();
-                    overlay.src = 'overlay.jpeg';
+                    overlay.src = 'layout_xenai.jpg';
                     overlay.onload = function() {
                         ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
                         document.getElementById('downloadLink').href = canvas.toDataURL("image/jpeg");
