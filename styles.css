@@ -1,42 +1,37 @@
 body {
-    text-align: center; /* Centre les éléments horizontalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
 }
 
 #container {
     position: relative;
-    width: 80%; /* Ajuster la largeur du conteneur principal */
-    max-width: 500px; /* Limite la largeur maximale du conteneur principal */
-    height: 800px; /* Ajuster la hauteur du conteneur principal */
-    background-color: #f2f2f2; 
-    padding: 20px; 
-    margin: 0 auto; /* Centre le conteneur principal horizontalement */
+    width: 300px;
+    height: 800px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
 #imageContainer, #imageToPasteContainer {
     position: relative;
-    width: 100%; 
-    height: 40%; 
-    overflow: hidden; 
-    margin-bottom: 20px; 
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 #imageCarree, #imageToPaste {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; /* Pour redimensionner les images afin qu'elles remplissent leur conteneur */ 
-    z-index: 1; /* Assure que l'image carrée est au-dessus de l'image à coller */
-}
-
-#imageToPaste {
-    z-index: 0; /* Assure que l'image à coller est en dessous de l'image carrée */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pour redimensionner les images afin qu'elles remplissent leur conteneur */
 }
 
 #downloadButton {
     display: block;
-    text-align: center; 
+    text-align: center;
 }
