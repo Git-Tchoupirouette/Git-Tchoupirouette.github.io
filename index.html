@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Inclure votre fichier CSS -->
     <title>Ajouter un élément à une image</title>
 </head>
 <body>
     <input type="file" id="imgInput" accept="image/*">
     <button id="addOverlayBtn">Ajouter un élément</button>
-    <canvas id="canvas"></canvas>
-    <a id="downloadLink" download="resultat.jpg" href="#">Télécharger le résultat</a>
+    <div id="imageContainer">
+        <img src="base_image.png" id="baseImage" alt="Image de base">
+        <img src="" id="userImage" alt="Image de l'utilisateur">
+</div>
+<a id="downloadLink" download="resultat.png" href="#">Télécharger l'image</a>
 
     <script src="main.js"></script>
 </body>
