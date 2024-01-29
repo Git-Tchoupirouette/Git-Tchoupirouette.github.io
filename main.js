@@ -13,7 +13,6 @@ document.getElementById('addOverlayBtn').addEventListener('click', function() {
             img.onload = function() {
                 if (img.width !== img.height) {
                     alert('Veuillez télécharger une image carrée.');
-                    // Réinitialiser l'input pour que l'utilisateur puisse télécharger une nouvelle image
                     imgInput.value = '';
                 } else {
                     canvas.width = img.width;
@@ -24,7 +23,7 @@ document.getElementById('addOverlayBtn').addEventListener('click', function() {
                     overlay.src = 'layout_xenai.jpg';
                     overlay.onload = function() {
                         ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
-                        document.getElementById('downloadLink').href = canvas.toDataURL("image/jpeg");
+                        document.getElementById('downloadLink').href = canvas.toDataURL("image/png");
                     };
                 }
             };
