@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <!-- Inclure votre fichier CSS -->
-    <title>Ajouter un élément à une image</title>
+    <title>Superposition d'images</title>
+    <style>
+        #container {
+            position: relative;
+            width: 900px;
+            height: 1600px;
+            background-image: url('votre-image-verticale.jpg');
+            background-size: cover;
+        }
+
+        #imageCarree {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #downloadButton {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <input type="file" id="imgInput" accept="image/*">
-    <button id="addOverlayBtn">Ajouter un élément</button>
-    <div id="imageContainer">
-        <img src="layout_xenai.jpg" id="baseImage" alt="Image de base">
-        <img src="" id="userImage" alt="Image de l'utilisateur">
-</div>
-<a id="downloadLink" download="resultat.png" href="#">Télécharger l'image</a>
+    <div id="container">
+        <input type="file" id="uploadImage" accept="image/*">
+        <img id="imageCarree" src="" alt="Image carrée">
+        <a id="downloadButton" download="resultat-final.jpg" href="#">Télécharger le résultat final</a>
+    </div>
 
-    <script src="main.js"></script>
+    <script>
+        document.getElementById('uploadImage').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            var image = document.getElementById('imageCarree');
+            image.src = URL.createObjectURL(file);
+
+            var downloadButton = document.getElementById('downloadButton');
+            downloadButton.href = image.src;
+        });
+    </script>
 </body>
 </html>
